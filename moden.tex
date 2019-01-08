@@ -1,0 +1,43 @@
+\documentclass[zihao=-4]{ctexart}
+\usepackage{newtxtext}
+\usepackage[colorlinks]{hyperref}
+% \usepackage{ulem}
+% \usepackage{coloremoji}
+
+\title{现代{\LaTeX}使用}
+\author{仇琛}
+
+\begin{document}
+    \maketitle
+    \begin{abstract}
+        由于技术的发展，{\LaTeX}系统也在不断的推陈出新。
+        但由于很多老旧的教程在互联网上风行。再加上风靡一时的CTeX套装停止维护，很多人都还在使用老旧的系统。
+        大量优秀的{\LaTeX}宏集不能得到有效的推广。
+        本文将向大家介绍现代的{\LaTeX}系统，并推荐一些{\LaTeX}宏集来帮助大家的{\LaTeX}写作。
+        另外本文也将针对IEEE格式论文的写作给出一些小技巧。
+    \end{abstract}
+    % \begin{verbatim}
+    %     latexmk -pdf
+    % \end{verbatim}
+    \section{{\LaTeX}发行版}
+    我们总说的{\LaTeX}实际上指的是一个排版程序。
+    但一个文档的产生还涉及到很多的{\LaTeX}宏集，只有这么一个程序其实你什么也做不了。
+    而将辅助{\LaTeX}的宏集打包在一起安装的一整个软件包就称为“发行版”。
+
+    在国内最有名的发行版就莫过于 \href{http://www.ctex.org/HomePage}{CTeX} 套装了。
+    CTeX套装实质上是MiKTeX套装的二次封装。其设计初衷是为了给中国用户提供一个能够方便的整合ctex宏集的{\LaTeX}系统。但随着ctex宏集被上游套装收录，CTeX套装便停止维护了。
+    由于CTeX套装中的宏集已经非常老旧了，我个人是非常\emph{不建议}大家使用CTeX套装的。
+
+    虽然我不推荐CTeX套装，但其上游的 \href{https://miktex.org/}{MiKTeX} 套装却是非常值得推荐的。
+    MiKTeX 为 Windows 用户提供了非常方便易用的用户界面。特别是其拥有自动下载缺失宏集的功能，避免了反复翻看编译日志的麻烦。
+    而这按需安装的功能也使得 MiKTeX 的安装显得更加小巧。
+    我们可以直接下载最新的 \texttt{basic-miktex} 安装包并安装，之后MiKTeX会在编译的过程中自动安装所需的宏集。为了加快搜索和下载缺失宏集的速度，还可以在MiKTeX的配置界面指定使用国内的 \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/}{CTAN} 镜像站。
+
+    另一个知名的{\LaTeX}发行版是 \href{https://www.tug.org/texlive/}{TeX Live} 套装。但 TeX Live 的配置相对比较麻烦，在此不多做讨论。有兴趣的可以自行查找相关资料。
+
+    \section{编译{\LaTeX}文件}
+
+    % 在讨论{\LaTeX}文件的编译之前，我们需要回顾一下历史。
+    虽然现在{\LaTeX}系统编译的结果都是PDF文件，但实际上{\LaTeX}系统的出现远在PDF格式问世之前。所以其实原始的 \texttt{latex} 命令只能输出DVI文件，DVI 文件又需要通过其他的方式来直接或者间接的生成PDF文件。
+    显然这样的操作很繁琐速度也慢，于是后来有人发明了pdfLaTeX。通过运行\texttt{pdflatex}命令，我们可以直接输出 PDF 文件而避免了繁琐的中间过程。
+\end{document}
